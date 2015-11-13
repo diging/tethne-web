@@ -19,12 +19,12 @@ from login.views import *
 
 urlpatterns = [
     # Login module urls
-    url(r'^$', 'django.contrib.auth.views.login'),
+    url(r'^$', home),
     url(r'^logout/$', logout_page),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'), # If user is not login it will redirect to login page
     url(r'^register/$', register),
     url(r'^register/success/$', register_success),
-    url(r'^home/$', home),
+    url(r'^login/$', 'django.contrib.auth.views.login'),
 
     # admin page url
     url(r'^admin/', include(admin.site.urls)),
